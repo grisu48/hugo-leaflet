@@ -23,18 +23,25 @@ And then place maps ecc.:
 
 ---
 
-## Installation/Loading necessary scripts
+## Installation
 
-[Download the project as ZIP](https://github.com/L1am0/hugo-leaflet/archive/master.zip) Place the contents of `layouts` and `static` (required for script local only) in your hugo directory.
+Download the [latest release](https://github.com/grisu48/hugo-leaflet/releases) as zip file.
 
-### Load Scripts from CDN
+* Copy the `layouts` folder to your hugo directory
+* *(only for scripts locally)* Copy the `static` folder to your hugo directory
+
+Place the contents of `layouts` and `static` (required for script local only) in your hugo directory.
+
+## Usage
+
+### 1.1 Load Scripts from CDN
 
 1) Copy the `layouts` folder over (containing the shortcuts)
 2) Call the load shortcut in every post or globally in the theme
 
     {{< load-leaflet >}}
 
-### Load Scripts locally
+### 1.2 Load Scripts locally
 
 1) Copy the `layouts` folder over (containing the shortcuts)
 2) Copy the `static` folder (js & css)
@@ -83,8 +90,6 @@ And then place maps ecc.:
 * `MARKERLAT` = latitude where to place the marker
 * `MARKERCONTENT` = Content that should be displayed in marker popup (Can be HTML)
 * `ZOOM` = the zoom level. This attribute is optional, default zoom level is 13. If set, it must be an int.
-
-## Donate
 
 ## License
 
