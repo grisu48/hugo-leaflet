@@ -2,7 +2,7 @@
 
 Shortcodes for inserting a OSM (Open Street Maps) Map into your posts by using leaflet.
 
-_You can use as much Maps in a single post as you like! (You only have to load the script once)_
+This project is a fork from [simonfrey/hugo-leaflet](https://github.com/simonfrey/hugo-leaflet), which has been polished and extended (e.g. include GPX files).
 
 ### Quick Start guide
 
@@ -53,7 +53,7 @@ Place the contents of `layouts` and `static` (required for script local only) in
 
 ### Map only
 
-    {{< leaflet-simple mapHeight="[MAPHEIGHT]" mapWidth="[MAPWIDTH]" mapLon="[MAPLON]" mapLat="[MAPLAT]" zoom="[ZOOM]">}}
+    {{< leaflet-simple mapHeight="MAPHEIGHT" mapWidth="MAPWIDTH" mapLon="MAPLON" mapLat="MAPLAT" zoom="ZOOM">}}
 
 * `MAPHEIGHT` = px | %
 * `MAPWIDTH` = px (must be pixels! Otherwise the map will not be shown)
@@ -67,7 +67,7 @@ Place the contents of `layouts` and `static` (required for script local only) in
 
 **Shortcut**
 
-    {{< leaflet-simple mapHeight="[MAPHEIGHT]" mapWidth="[MAPWIDTH]" mapLon="[MAPLON]" mapLat="[MAPLAT]" markerLon="[MARKERLON]" markerLat="[MARKERLAT]">}}
+    {{< leaflet-simple mapHeight="MAPHEIGHT" mapWidth="MAPWIDTH" mapLon="MAPLON" mapLat="MAPLAT" markerLon="MARKERLON" markerLat="MARKERLAT">}}
 
 
 * `MAPHEIGHT` = px | %
@@ -80,7 +80,7 @@ Place the contents of `layouts` and `static` (required for script local only) in
 
 #### Marker _with_ Popup
 
-    {{< leaflet-simple mapHeight="[MAPHEIGHT]" mapWidth="[MAPWIDTH]" mapLon="[MAPLON]" mapLat="[MAPLAT]" markerLon="[MARKERLON]" markerLat="[MARKERLAT]" markerContent="[MARKERCONTENT]">}}
+    {{< leaflet-simple mapHeight="MAPHEIGHT" mapWidth="MAPWIDTH" mapLon="MAPLON" mapLat="MAPLAT" markerLon="MARKERLON" markerLat="MARKERLAT" markerContent="MARKERCONTENT">}}
 
 * `MAPHEIGHT` = px | %
 * `MAPWIDTH` = px (must be pixels! Otherwise the map will not be shown)
@@ -91,6 +91,16 @@ Place the contents of `layouts` and `static` (required for script local only) in
 * `MARKERCONTENT` = Content that should be displayed in marker popup (Can be HTML)
 * `ZOOM` = the zoom level. This attribute is optional, default zoom level is 13. If set, it must be an int.
 
+#### Show GPX file
+
+    {{< leaflet-gpx mapHeight="MAPHEIGHT" mapWidth="MAPWIDTH" mapLon="MAPLON" mapLat="MAPLAT" gpx="GPXFILE" >}}
+
+* `MAPHEIGHT` = px | %
+* `MAPWIDTH` = px (must be pixels! Otherwise the map will not be shown)
+* `MAPLON` = longitude where to center the map
+* `MAPLAT` = latitude where to center the map
+* `GPX` = URL to the gpx file to load
+* 
 ## License
 
 GPL v2
@@ -98,6 +108,8 @@ GPL v2
 ## Attribution
 
 This is a fork from [simonfrey/hugo-leaflet](https://github.com/simonfrey/hugo-leaflet), which unfortunately looks abandoned.
+
+It also includes the [leaflet-omnivore](https://github.com/mapbox/leaflet-omnivore) for GPX display.
 
 ---
 

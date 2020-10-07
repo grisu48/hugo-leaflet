@@ -1,0 +1,18 @@
+{{ if .IsNamedParams }}
+<div id="map_{{.Get "mapLon" }}" style="width:{{.Get "mapWidth" }};height:{{.Get "mapHeight" }};"></div>
+<script>
+	let zoom = {{ if .Get "zoom" }}{{ int (.Get "zoom") }}{{ else }}13{{ end }};
+	var map = L.map('map_{{.Get "mapLon" }}').setView([{{.Get "mapLat" }}, {{.Get "mapLon" }}], zoom);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+	}).addTo(map);
+{{ if .Get "gpx" }}
+	omnivore.gpx('{{.Get "gpx"}}').addTo(map);
+{{ end }}
+</script>
+{{ else }}
+<hr>
+<p><b>Leaflet GPX error</b>: Named parameters missing.</p>
+<hr>
+{{ end }}
